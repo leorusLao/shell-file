@@ -3,6 +3,8 @@
 
 yum install -y gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel
 
+type wget >/dev/null 2>&1 || yum install -y wget
+
 wget -O nginx.tar.gz https://nginx.org/download/nginx-1.10.1.tar.gz
 
 
