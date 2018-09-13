@@ -40,7 +40,8 @@ echo '===end make install==='
 fi
 
 
-
+rm -f /usr/local/nginx.tar.gz
+rm -rf /usr/local/nginx-1.10.1
 
 
 

@@ -42,11 +42,19 @@ echo '==end make install==='
 
 fi
 
-echo '===start configure environment variable==='
-echo 'PATH=$PATH:/usr/local/php/bin' >> /etc/profile
-echo 'export PATH' >> /etc/profile
 
-source /etc/profile
+
+echo '===start configure environment variable==='
+
+grep 'PATH=$PATH:/usr/local/php/bin' /etc/profile > /dev/null
+if [ $? -eq 0 ]
+then 
+
+	echo 'PATH=$PATH:/usr/local/php/bin' >> /etc/profile
+	echo 'export PATH' >> /etc/profile
+	source /etc/profile
+
+fi
 
 
 
@@ -56,3 +64,10 @@ cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
 cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
 cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
+
+
+rm -f /usr/local/php7.tar.gz
+rm -rf /usr/local/php-7.1.5
+
+
+

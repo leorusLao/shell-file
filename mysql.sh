@@ -20,6 +20,7 @@ echo '===start install mysql==='
 yum install -y mysql-server
 echo '===end install mysql==='
 
+rm -f mysql-community-release-el7-5.noarch.rpm
 
 echo 'complete'
 
