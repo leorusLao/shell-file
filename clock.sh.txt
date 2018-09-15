@@ -133,6 +133,7 @@ function INIT {
     tput civis; #设置光标不可见
     while [ 1 ]
     do 
+    	tput clear
     	old_value;
 	done
 }
